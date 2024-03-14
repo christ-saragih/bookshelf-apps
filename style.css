@@ -1,0 +1,226 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #bc64ed;
+    --dark-primary-color: #9e1fe5;
+    --light-primary-color: #daa9f5;
+    --btn-finish: #66e51f;
+    --btn-finish-hover: #51bb16;
+    --btn-delete: #e51f66;
+    --btn-delete-hover: #bb1651;
+}
+
+body, input, button {
+    font-family: 'Open Sans', sans-serif;
+}
+
+input, button {
+    font-size: 16px;
+}
+
+.head_bar {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+main {
+    max-width: 800px;
+    width: 80%;
+    margin: 0 auto;
+    padding: 16px;
+
+}
+
+.input_section {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.input_section > h2 {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.input_section > form > .input {
+    margin: 8px 0;
+}
+
+.input_section > form > button {
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.input_section > form > button:hover {
+    background-color: var(--dark-primary-color);
+    transition: 0.3s ease all;
+}
+
+.input_section > form > button > span {
+    font-weight: bold;
+}
+
+.input_section > form > .input > input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid var(--dark-primary-color);
+}
+
+.input_section > form > .input > input:focus {
+    outline: none;
+    border: 3px solid var(--dark-primary-color);
+}
+
+.input_section > form > .input > label {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.input_section > form > .input_inline {
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+}
+
+.input_section > form > .input_inline > label {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.search_section {
+    margin: 16px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.search_section > h2 {
+    color: var(--primary-color);
+}
+
+.search_section > form {
+    padding: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 0.3fr;
+    grid-gap: 10px;
+}
+
+.search_section > form > input {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid var(--dark-primary-color);
+}
+
+.search_section > form > input:focus {
+    outline: none;
+    border: 3px solid var(--dark-primary-color);
+}
+
+.search_section > form > button {
+    background-color: var(--primary-color);
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search_section > form > button:hover {
+    background-color: var(--dark-primary-color);
+    transition: 0.3s ease all;
+}
+
+.book_shelf {
+    margin: 16px 0 0 0;
+    border: 1px solid black;
+    padding: 16px;
+    border-radius: 10px;
+}
+
+.book_shelf > h2 {
+    color: var(--primary-color);
+}
+
+.book_shelf > .book_list {
+    padding: 16px;
+}
+
+.book_shelf > .book_list > .book_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-block: 16px;
+    padding-inline: 20px;
+    background-color: var(--light-primary-color);
+    box-shadow: 8px 8px 0px 0px var(--primary-color);
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-block: 20px;
+    margin-inline: 0;
+}
+
+.book_shelf > .book_list > .book_container > .book_item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.book_shelf > .book_list > .book_container .action {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    gap: 6px;
+}
+
+.book_shelf > .book_list > .book_container > .action > button {
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.book_shelf > .book_list > .book_container > .action > .green {
+    background-color: var(--btn-finish);;
+    color: white;
+}
+
+.book_shelf > .book_list > .book_container > .action > .green:hover {
+    background-color: var(--btn-finish-hover);
+    transition: 0.3s ease all;
+    color: white;
+}
+
+.book_shelf > .book_list > .book_container > .action > .red {
+    background-color: var(--btn-delete);
+    color: white;
+}
+
+.book_shelf > .book_list > .book_container > .action > .red:hover {
+    background-color: var(--btn-delete-hover);
+    transition: 0.3s ease all;
+    color: white;
+}
