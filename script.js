@@ -30,18 +30,18 @@ function generateId() {
     return +new Date();
   }
 
-function generateBookObject(id, title, author, year, isCompleted) {
+function generateBookObject(id, title, author, year, isComplete) {
     return {
         id,
         title,
         author,
-        year,
-        isCompleted
+        year: parseInt(year),
+        isComplete
     }
 }
 
 document.addEventListener(RENDER_EVENT, function () {
-    // console.log(books);
+    console.log(books);
     const uncompletedBookList = document.getElementById('uncompleteBookshelfList');
     uncompletedBookList.innerHTML = '';
 
@@ -50,7 +50,7 @@ document.addEventListener(RENDER_EVENT, function () {
     
     for(const bookItem of books) {
         const bookElement = makeBook(bookItem);
-        if(!bookItem.isCompleted) {
+        if(!bookItem.isComplete) {
             uncompletedBookList.append(bookElement);
         } else {
             completedBookList.append(bookElement);
@@ -77,7 +77,7 @@ function makeBook(bookObject) {
     container.append(textContainer);
     container.setAttribute('id', `book-${bookObject.id}`);
 
-    if (bookObject.isCompleted) {
+    if (bookObject.isComplete) {
         const unfinishButton = document.createElement('button');
         unfinishButton.classList.add('green');
         unfinishButton.innerText = "Belum selesai dibaca";
@@ -131,7 +131,7 @@ function addBookToCompleted(bookId) {
 
     if(bookTarget == null) return;
 
-    bookTarget.isCompleted = true;
+    bookTarget.isComplete = true;
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
 }
@@ -163,7 +163,7 @@ function unfinishBookFromCompleted(bookId) {
    
     if (bookTarget == null) return;
    
-    bookTarget.isCompleted = false;
+    bookTarget.isComplete = false;
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData();
 }
@@ -173,7 +173,7 @@ function finishBookToCompleted(bookId) {
    
     if (bookTarget == null) return;
    
-    bookTarget.isCompleted = true;
+    bookTarget.isComplete = true;
     document.dispatchEvent(new Event(RENDER_EVENT));
     saveData(); 
 }
@@ -249,7 +249,7 @@ function updateSearchResults(results) {
 
     for(const book of results) {
         const bookItem = makeBook(book);
-        if(book.isCompleted) {
+        if(book.isComplete) {
             completedBookList.appendChild(bookItem);
         } else {
             uncompletedBookList.appendChild(bookItem);
